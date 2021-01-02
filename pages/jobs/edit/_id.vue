@@ -1,6 +1,5 @@
 <template>
 	<div>
-		{{ job }}
 		<form class="w-6/12 mx-auto" v-if="$auth.user" @submit.prevent="updateJob">
 			<div class="mb-10">
 				<h2 class="mb-4 text-2xl font-bold">Listing Details</h2>
