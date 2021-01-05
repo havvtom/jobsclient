@@ -1,5 +1,6 @@
 <template>
 	<header class="py-6 flex justify-between items-center">
+		<Snack/>
 		<div>
 			<nuxt-link
 				:to="{ name: 'index' }"
@@ -27,6 +28,7 @@
 </template>
 
 <script type="text/javascript">
+
 	export default {
 		computed: {
 			goTo () {
@@ -40,7 +42,7 @@
 				}
 			}
 		},
-		methods: {
+		methods: {			
 			async signOut () {
 				await this.$auth.logout()
 				this.$router.push({name:'index'})

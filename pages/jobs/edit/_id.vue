@@ -124,6 +124,7 @@
 </template>
 
 <script type="text/javascript">
+	import { mapActions } from 'vuex'
 	export default {
 		data () {
 			return {
@@ -137,9 +138,20 @@
 			
 		},
 		methods: {
+			...mapActions ({ 
+				snack: 'snack'
+			 }),
 			async updateJob () {
-				let response = await this.$axios.patch(`jobs/${this.job.id}`, this.job)
-				console.log(response)
+				try {
+						await this.$axios.patch(`jobs/${this.job.id}`, this.job).then( () => {
+							this.$router.push({name: 'user-listings'})
+						}).then( () => {
+							this.snack('Your listing has been updated')							
+						} )
+					} catch (e) {
+						this.validation = e.response.data.errors
+					}
+				
 			}
 		},
 		async asyncData ({ app, params }) {

@@ -123,6 +123,7 @@
 	</div>
 </template>
 <script type="text/javascript">
+	import { mapActions } from 'vuex'
 	export default {
 		data () {
 			return {
@@ -145,10 +146,14 @@
 			}
 		},
 		methods: {
-			
+			...mapActions ({ 
+				snack: 'snack'
+			 }),
 			async createJob () {
 				try {
-					let response = await this.$axios.post('jobs', this.form)
+					await this.$axios.post('jobs', this.form).then( () => {
+						this.snack('Your listing has been succesfully added')	
+					} )
 					this.$router.push({ name: 'index' })
 					this.form = {}
 					// console.log(response.data)
