@@ -32,6 +32,9 @@
 				</nuxt-link
 				>
 			</div>
+			<div class="text-gray-600">
+				{{ lastSaved }}
+			</div>
 			<div>
 				<slot name="action">
 					<div class="opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-200">	
@@ -48,11 +51,17 @@
 	</div>
 </template>
 <script type="text/javascript">
+	import moment from 'moment'
 	export default {
 		props: {
 			job: {
 				required: true,
 				type: Object
+			}
+		},
+		computed: {
+			lastSaved () {
+				return moment(this.job.updated_at).fromNow()
 			}
 		}
 	}
