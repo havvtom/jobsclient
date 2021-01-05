@@ -1,6 +1,6 @@
 <template>
 	<div class="mt-10 flex justify-center">
-		<form class="w-6/12" @submit.prevent="submit">
+		<form class="w-10/12 sm:w-6/12" @submit.prevent="submit">
 			<h2 class="mb-4 text-2xl font-bold">Login</h2>
 			<div class="mb-4">
 				<label 

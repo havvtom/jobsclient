@@ -1,5 +1,5 @@
 <template>
-	<form class="w-6/12 mx-auto" v-else @submit.prevent="createAccount">
+	<form class="w-10/12 sm:w-6/12 mx-auto" v-else @submit.prevent="createAccount">
 				<div class="mb-10">
 					<h2 class="mb-4 text-2xl font-bold">Create an account to manage your listings or 
 						<nuxt-link class="text-blue-500" :to="{ name: 'login' }">login</nuxt-link> if you already have an account

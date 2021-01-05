@@ -12,6 +12,7 @@
 		<div class="-mx-4">
 			<nuxt-link :to="goTo" class="mx-4">Post a Job</nuxt-link>
 			<template v-if="$auth.loggedIn">
+				<nuxt-link :to="{ name: 'tags-create' }" v-if="$auth.user.email == 'havvtom@gmail.com'">Add Tags</nuxt-link>
 				<a href="" class="mx-4 font-bold">{{ $auth.user.name }}</a>
 				<nuxt-link :to="{ name:'user-listings' }" class="mx-4">Manage Listings</nuxt-link>
 				<a href="" @click.prevent="signOut" class="mx-4">Logout</a>
