@@ -36,7 +36,7 @@
 
 					<ul v-if="isOpen" @click=" isOpen = !isOpen " class="bg-white shadow-xl absolute top-10 right-0 rounded overflow-hidden z-50 w-40 mt-2 mr-2">
 						<li>
-							<nuxt-link :to="goTo" class="mx-4">Post a Job</nuxt-link>
+							<nuxt-link :to="goTo" class="mx-4 text-sm text-gray-800">Post a Job</nuxt-link>
 						</li>
 						<template v-if="$auth.loggedIn">
 							<li>
