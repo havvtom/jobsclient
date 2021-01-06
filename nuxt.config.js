@@ -61,7 +61,7 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: 'https://havvjobs-api.herokuapp.com/api'
+    baseURL: 'https://havvjobs-api.herokuapp.com/'
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

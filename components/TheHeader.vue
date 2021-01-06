@@ -10,7 +10,7 @@
 			</nuxt-link>
 		</div>
 		<div class="sm:-mx-4 flex">
-			<a href="" class="mx-4 font-bold">{{ $auth.user.name }}</a>
+			<a href="" v-if="$auth.user" class="mx-4 font-bold">{{ $auth.user.name }}</a>
 			<div class="hidden sm:block ">
 				<nuxt-link :to="goTo" class="mx-4">Post a Job</nuxt-link>
 				<template v-if="$auth.loggedIn">
