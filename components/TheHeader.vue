@@ -4,7 +4,7 @@
 		<div>
 			<nuxt-link
 				:to="{ name: 'index' }"
-				exact-active-class="text-blue-500"
+				class="ml-2 sm:ml-0"
 			>
 				Jobs
 			</nuxt-link>
@@ -26,15 +26,15 @@
 				</template>
 			</div>	
 			<div class="sm:hidden">
-				<div class="relative">
+				<div class="relative" v-click-outside="hide">
 					<svg xmlns="http://www.w3.org/2000/svg" v-if="!isOpen" @click="isOpen = true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 text-gray-900 mr-1">
 					  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 					</svg>
-					<svg xmlns="http://www.w3.org/2000/svg" v-else @click="isOpen=false" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 text-gray-900 mr-1">
+					<svg xmlns="http://www.w3.org/2000/svg" @click="hide" v-else fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 text-gray-900 mr-1">
 					  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
 					</svg>
 
-					<ul v-show="isOpen" v-click-outside="hide" @click=" isOpen = !isOpen " class="bg-white shadow-xl absolute top-10 right-0 rounded overflow-hidden z-50 w-40 mt-2 mr-2">
+					<ul v-if="isOpen" @click=" isOpen = !isOpen " class="bg-white shadow-xl absolute top-10 right-0 rounded overflow-hidden z-50 w-40 mt-2 mr-2">
 						<li>
 							<nuxt-link :to="goTo" class="mx-4">Post a Job</nuxt-link>
 						</li>
