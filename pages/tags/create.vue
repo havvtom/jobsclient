@@ -31,13 +31,18 @@
 	export default {
 		data () {
 			return {
-				form: {},
+				form: {
+					title: ''
+				},
 				validation: {}
 			}
 		},
 		methods: {
 			saveTag () {
-
+				
+				this.$axios.post('tags', this.form).then( () => {
+					this.$router.push({name: 'index'})
+				} )
 			}
 		}
 	}
